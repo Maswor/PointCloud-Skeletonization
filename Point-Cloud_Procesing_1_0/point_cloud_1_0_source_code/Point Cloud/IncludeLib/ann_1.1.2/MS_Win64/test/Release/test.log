@@ -1,0 +1,26 @@
+﻿Build started 2013/3/7 13:57:44.
+     1>Project "D:\IncludeLib\ann_1.1.2\MS_Win64\test\test.vcxproj" on node 3 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Release\test.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I..\..\include /Zi /nologo /W3 /WX- /O2 /Ob1 /D NDEBUG /D PREP /D WIN32 /D _CONSOLE /D ANN_NO_RANDOM /D _VC80_UPGRADE=0x0710 /D _MBCS /D _AFXDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Release/" /Fd".\Release/vc100.pdb" /Gd /TP /errorReport:prompt ..\..\test\ann_test.cpp ..\..\test\rand.cpp
+         ann_test.cpp
+         rand.cpp
+         Generating Code...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(D:\IncludeLib\ann_1.1.2\MS_Win64\test\.\Release\test.exe) does not match the Linker's OutputFile property value (D:\IncludeLib\ann_1.1.2\MS_Win64\bin\ann_test.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(test) does not match the Linker's OutputFile property value (ann_test). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\ann_test.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\Release\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:".\Release/test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Release\test.lib" /MACHINE:X64 .\Release/ann_test.obj
+         .\Release/rand.obj
+         D:\IncludeLib\ann_1.1.2\MS_Win64\dll\Release\ANN.lib
+         test.vcxproj -> D:\IncludeLib\ann_1.1.2\MS_Win64\test\.\Release\test.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\bin\ann_test.exe;#1" /manifest .\Release\test.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file ".\Release\test.unsuccessfulbuild".
+         Touching ".\Release\test.lastbuildstate".
+     1>Done Building Project "D:\IncludeLib\ann_1.1.2\MS_Win64\test\test.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.50
