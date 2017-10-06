@@ -15,3 +15,6 @@ This compile under this circumstance:
 
 
 +, This file should be kept intact and serving as restarting point
+-----------------------------------
+
++ Removed some windows specific to comply with standard C++
