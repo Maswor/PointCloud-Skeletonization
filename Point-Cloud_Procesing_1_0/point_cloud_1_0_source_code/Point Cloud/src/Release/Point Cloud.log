@@ -1,0 +1,325 @@
+﻿Build started 10/4/2017 3:39:23 PM.
+     1>Project "C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\Point Cloud.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\PointCloud.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Moc'ing mainwindow.h...
+         Uic'ing mainwindow.ui...
+         Moc'ing UI\dlg_upsampling_para.h...
+         Moc'ing UI\dlg_skeleton_para.h...
+         Moc'ing calculationthread.h...
+         Moc'ing UI\std_para_dlg.h...
+         Moc'ing UI\dlg_normal_para.h...
+         Moc'ing UI\dlg_wlop_para.h...
+         Moc'ing GLArea.h...
+         Rcc'ing mainwindow.qrc...
+         Uic'ing UI\para_wlop.ui...
+         Uic'ing UI\normal_para.ui...
+         Uic'ing UI\para_skeletonization.ui...
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\para_skeletonization.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\para_skeletonization.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\para_skeletonization.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget3'.
+         Uic'ing UI\upsampling_para.ui...
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\upsampling_para.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\upsampling_para.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\upsampling_para.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget3'.
+     1>C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\UI\upsampling_para.ui : warning : The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget4'.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\4.8.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.8.4\include\qtmain /IC:\Qt\4.8.4\include\QtCore /IC:\Qt\4.8.4\include\QtGui /IC:\Qt\4.8.4\include\QtOpenGL /I. /IC:\Qt\4.8.4\include\QtTest /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_DLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Algorithm\NormalSmoother.cpp Algorithm\Skeleton.cpp Algorithm\Skeletonization.cpp Algorithm\Upsampler.cpp Algorithm\WLOP.cpp calculationthread.cpp Console.cpp DataMgr.cpp GeneratedFiles\Release\moc_calculationthread.cpp GeneratedFiles\Release\moc_dlg_normal_para.cpp GeneratedFiles\Release\moc_dlg_skeleton_para.cpp GeneratedFiles\Release\moc_dlg_upsampling_para.cpp GeneratedFiles\Release\moc_dlg_wlop_para.cpp GeneratedFiles\Release\moc_GLArea.cpp GeneratedFiles\Release\moc_mainwindow.cpp GeneratedFiles\Release\moc_std_para_dlg.cpp GLArea.cpp GLDrawer.cpp GlobalFunction.cpp grid.cpp main.cpp mainwindow.cpp Parameter.cpp ParameterMgr.cpp plylib.cpp trackball.cpp trackmode.cpp UI\dlg_normal_para.cpp UI\dlg_skeleton_para.cpp UI\dlg_upsampling_para.cpp UI\dlg_wlop_para.cpp UI\std_para_dlg.cpp
+         NormalSmoother.cpp
+         Skeleton.cpp
+         Skeletonization.cpp
+         Upsampler.cpp
+         WLOP.cpp
+         calculationthread.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         Console.cpp
+         DataMgr.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2209): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2218): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2232): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2379): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2386): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2446): warning C4002: too many actual parameters for macro 'assert'
+         moc_calculationthread.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         moc_dlg_normal_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         moc_dlg_skeleton_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         moc_dlg_upsampling_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         moc_dlg_wlop_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         moc_GLArea.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         moc_mainwindow.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         moc_std_para_dlg.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         GLArea.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         GLDrawer.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2209): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2218): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2232): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2379): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2386): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2446): warning C4002: too many actual parameters for macro 'assert'
+         GlobalFunction.cpp
+         grid.cpp
+         Generating Code...
+     1>c:\users\meisu\desktop\pointcloudprocessingtruong\point-cloud_procesing_1_0\point_cloud_1_0_source_code\point cloud\algorithm\skeleton.cpp(66): warning C4715: 'Branch::getNodeLengthEulerDist' : not all control paths return a value
+     1>c:\users\meisu\desktop\pointcloudprocessingtruong\point-cloud_procesing_1_0\point_cloud_1_0_source_code\point cloud\algorithm\skeleton.cpp(84): warning C4715: 'Branch::getNodeLengthEulerDistSquare' : not all control paths return a value
+         Compiling...
+         main.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         mainwindow.cpp
+     1>IncludeLib\vcglib\vcg/container/simple_temporary_data.h(157): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(636): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/allocate.h(677): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(188): warning C4002: too many actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/sphere3.h(189): warning C4002: too many actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/simplex/face/component_ocf.h(209): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(409): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/distance3.h(469): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/space/index/space_iterators.h(113): warning C4003: not enough actual parameters for macro 'min'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(123): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(124): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(288): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(289): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(320): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/math/histogram.h(321): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(72): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/stat.h(86): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(343): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/update/color.h(344): warning C4003: not enough actual parameters for macro 'max'
+         Parameter.cpp
+         ParameterMgr.cpp
+         plylib.cpp
+         trackball.cpp
+         trackmode.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2209): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2218): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2232): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2379): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2386): warning C4002: too many actual parameters for macro 'assert'
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(2446): warning C4002: too many actual parameters for macro 'assert'
+         dlg_normal_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>UI\dlg_normal_para.cpp(39): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_normal_para.cpp(39): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+         dlg_skeleton_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>UI\dlg_skeleton_para.cpp(124): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_skeleton_para.cpp(124): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_skeleton_para.cpp(127): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_skeleton_para.cpp(127): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+         dlg_upsampling_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>UI\dlg_upsampling_para.cpp(57): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_upsampling_para.cpp(57): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_upsampling_para.cpp(60): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_upsampling_para.cpp(60): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+         dlg_wlop_para.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+     1>UI\dlg_wlop_para.cpp(74): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_wlop_para.cpp(74): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_wlop_para.cpp(77): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+     1>UI\dlg_wlop_para.cpp(77): warning C4482: nonstandard extension used: enum 'Qt::CheckState' used in qualified name
+         std_para_dlg.cpp
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(231): warning C4003: not enough actual parameters for macro 'max'
+     1>IncludeLib\vcglib\vcg/complex/trimesh/bitquad_support.h(273): warning C4003: not enough actual parameters for macro 'max'
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /IC:\Qt\4.8.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.8.4\include\qtmain /IC:\Qt\4.8.4\include\QtCore /IC:\Qt\4.8.4\include\QtGui /IC:\Qt\4.8.4\include\QtOpenGL /I. /IC:\Qt\4.8.4\include\QtTest /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_DLL /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_mainwindow.cpp
+         qrc_mainwindow.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\\PointCloud.exe" /NOLOGO /LIBPATH:C:\Qt\4.8.4\lib qtmain.lib QtCore4.lib QtGui4.lib QtOpenGL4.lib QtTest4.lib ANN.lib glut32.lib glew32.lib opengl32.lib /MANIFEST /ManifestFile:"Release\PointCloud.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\PointCloud.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\PointCloud.lib" /MACHINE:X86 /PROFILE Release\NormalSmoother.obj
+         Release\Skeleton.obj
+         Release\Skeletonization.obj
+         Release\Upsampler.obj
+         Release\WLOP.obj
+         Release\calculationthread.obj
+         Release\Console.obj
+         Release\DataMgr.obj
+         Release\qrc_mainwindow.obj
+         Release\moc_calculationthread.obj
+         Release\moc_dlg_normal_para.obj
+         Release\moc_dlg_skeleton_para.obj
+         Release\moc_dlg_upsampling_para.obj
+         Release\moc_dlg_wlop_para.obj
+         Release\moc_GLArea.obj
+         Release\moc_mainwindow.obj
+         Release\moc_std_para_dlg.obj
+         Release\GLArea.obj
+         Release\GLDrawer.obj
+         Release\GlobalFunction.obj
+         Release\grid.obj
+         Release\main.obj
+         Release\mainwindow.obj
+         Release\Parameter.obj
+         Release\ParameterMgr.obj
+         Release\plylib.obj
+         Release\trackball.obj
+         Release\trackmode.obj
+         Release\dlg_normal_para.obj
+         Release\dlg_skeleton_para.obj
+         Release\dlg_upsampling_para.obj
+         Release\dlg_wlop_para.obj
+         Release\std_para_dlg.obj
+         Point Cloud.vcxproj -> C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\PointCloud.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\\PointCloud.exe;#1" /manifest Release\PointCloud.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\PointCloud.unsuccessfulbuild".
+         Touching "Release\PointCloud.lastbuildstate".
+     1>Done Building Project "C:\Users\meisu\Desktop\PointCloudProcessingTruong\Point-Cloud_Procesing_1_0\point_cloud_1_0_source_code\Point Cloud\Point Cloud.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:51.89

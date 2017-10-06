@@ -1,0 +1,13 @@
+﻿生成启动时间为 2013/4/11 23:14:36。
+     1>项目“D:\IncludeLib\ann_1.1.2\MS_Win64\ann2fig\ann2fig.vcxproj”在节点 4 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\ann2fig.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I..\..\include /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _CRT_SECURE_NO_DEPRECATE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /errorReport:prompt ..\..\ann2fig\ann2fig.cpp
+         ann2fig.cpp
+     1>..\..\ann2fig\ann2fig.cpp(584): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+     1>已完成生成项目“D:\IncludeLib\ann_1.1.2\MS_Win64\ann2fig\ann2fig.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.60

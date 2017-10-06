@@ -1,0 +1,13 @@
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/build
+-I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/vcglib
+-I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/glut64/include
+-I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/ann_1.1.2/include
+-D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/build/src/UI/moc_dlg_normal_para.cxx
+/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/UI/dlg_normal_para.cpp

@@ -1,0 +1,50 @@
+<RCC>
+    <qresource prefix="/mainwindow">
+        <file>Icons/90.png</file>
+        <file>Icons/91.png</file>
+        <file>Icons/93.png</file>
+        <file>Icons/98.png</file>
+        <file>Icons/109.png</file>
+        <file>Icons/115.png</file>
+        <file>Icons/118.png</file>
+        <file>Icons/125.png</file>
+        <file>Icons/brush.png</file>
+        <file>Icons/color_blue.png</file>
+        <file>Icons/color_green.png</file>
+        <file>Icons/color_red_ggr.png</file>
+        <file>Icons/color_red_grg.png</file>
+        <file>Icons/edgecollapse.png</file>
+        <file>Icons/edgesplit.png</file>
+        <file>Icons/eraser.png</file>
+        <file>Icons/flat.png</file>
+        <file>Icons/folder_128x128-32.png</file>
+        <file>Icons/folder_open_128x128-32.png</file>
+        <file>Icons/gameboid_128x128-32.png</file>
+        <file>Icons/gowalla_128x128-32.png</file>
+        <file>Icons/heyzap_128x128-32.png</file>
+        <file>Icons/lightoff.png</file>
+        <file>Icons/lighton.png</file>
+        <file>Icons/open.png</file>
+        <file>Icons/points.png</file>
+        <file>Icons/reload.png</file>
+        <file>Icons/rgbt.png</file>
+        <file>Icons/save.png</file>
+        <file>Icons/sel_rect.png</file>
+        <file>Icons/sel_rect_minus.png</file>
+        <file>Icons/sel_rect_plus.png</file>
+        <file>Icons/select_face.png</file>
+        <file>Icons/select_face_rect.png</file>
+        <file>Icons/selected.png</file>
+        <file>Icons/settings_128x128-32.png</file>
+        <file>Icons/sleepbot_128x128-32.png</file>
+        <file>Icons/smooth.png</file>
+        <file>Icons/snapshot.png</file>
+        <file>Icons/triangle.png</file>
+        <file>Icons/vertex.png</file>
+        <file>Icons/points -upsample.png</file>
+        <file>Icons/xw-upsample.jpg</file>
+        <file>Icons/xw-upsample.png</file>
+        <file>Icons/upsample-xw.jpg</file>
+        <file>Icons/upsample-xw.png</file>
+    </qresource>
+</RCC>

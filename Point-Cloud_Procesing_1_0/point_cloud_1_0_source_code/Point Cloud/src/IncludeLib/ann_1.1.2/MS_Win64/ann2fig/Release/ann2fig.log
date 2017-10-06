@@ -1,0 +1,13 @@
+﻿Build started 2013/3/7 13:57:54.
+     1>Project "D:\IncludeLib\ann_1.1.2\MS_Win64\ann2fig\ann2fig.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\ann2fig.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I..\..\include /Zi /nologo /W3 /WX- /O2 /D WIN32 /D NDEBUG /D _CONSOLE /D _CRT_SECURE_NO_DEPRECATE /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /errorReport:prompt ..\..\ann2fig\ann2fig.cpp
+         ann2fig.cpp
+     1>..\..\ann2fig\ann2fig.cpp(584): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>Done Building Project "D:\IncludeLib\ann_1.1.2\MS_Win64\ann2fig\ann2fig.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.38
