@@ -250,8 +250,8 @@ void Attach(FaceType * &f, int z1, FaceType *&f2, int z2)
 		EPB.NextF();
 	}
 	//Salvo i dati di f1 prima di sovrascrivere
-	FaceType *f1prec = f.FFp(z1);  
-	int z1prec = f.FFi(z1);
+	FaceType *f1prec = f->FFp(z1);  
+	int z1prec = f->FFi(z1);
 	//Aggiorno f1
 	f->FFp(z1) = TEPB.f->FFp(TEPB.z);  
 	f->FFi(z1) = TEPB.f->FFi(TEPB.z);
