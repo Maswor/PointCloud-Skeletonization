@@ -288,7 +288,7 @@ public:
 				{
 					int placeholder_index = int(placeholders.size());
 					placeholders.push_back( ObjectPlaceholder< NodeType >() ); 
-					placeholders[placeholder_index].z_order			 = BuildRoute(hit_leaf, route);
+					placeholders[placeholder_index].z_order			 = this->BuildRoute(hit_leaf, route);
 					placeholders[placeholder_index].leaf_pointer = route[depth];
 					placeholders[placeholder_index].object_index = i;					
 					

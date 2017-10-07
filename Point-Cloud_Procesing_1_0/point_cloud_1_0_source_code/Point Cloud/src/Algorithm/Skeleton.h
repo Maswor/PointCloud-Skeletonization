@@ -18,7 +18,7 @@ public:
 		branch_id = b.branch_id;
 	}
 
-	Branch& Branch::operator = (const Branch& b)
+	Branch& operator = (const Branch& b)
 	{
 		if (&b != this)
 		{
