@@ -4,7 +4,7 @@
 #include <QtGui/QMainWindow>
 #include "Algorithm/normal_extrapolation.h"
 #include "ui_mainwindow.h"
-#include "GLArea.h"
+#include "glarea.h"
 #include "UI/std_para_dlg.h"
 #include "UI/dlg_wlop_para.h"
 #include "ParameterMgr.h"

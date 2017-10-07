@@ -21,7 +21,7 @@
 #include <vcg/complex/trimesh/update/selection.h>
 #include <vcg/complex/trimesh/update/topology.h>
 
-#include <vcg\space\point3.h>
+#include <vcg/space/point3.h>
 
 #include <cstdlib> //for rand()
 #include <ctime> //for time()

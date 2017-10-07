@@ -5,6 +5,7 @@
 -I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/vcglib
 -I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/glut64/include
 -I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src/IncludeLib/ann_1.1.2/include
+-I/home/meisu/Desktop/PointCloudISU/l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/Point Cloud/src
 -D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
 -DQT_GUI_LIB
 -DQT_CORE_LIB

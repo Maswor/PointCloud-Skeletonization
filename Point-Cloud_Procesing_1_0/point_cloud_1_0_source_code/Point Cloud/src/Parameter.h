@@ -30,7 +30,7 @@
 #include<QString>
 #include <QPair>
 #include <QAction>
-#include "CMesh.h"
+#include "cmesh.h"
 
 //enum TypeId {BOOL,INT,FLOAT,STRING,MATRIX44F,POINT3F,COLOR,ENUM,MESH,GROUP,FILENAME};
 //

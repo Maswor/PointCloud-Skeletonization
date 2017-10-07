@@ -22,7 +22,7 @@
 #include "Algorithm/NormalSmoother.h"
 #include "DataMgr.h"
 #include "GLDrawer.h"
-#include "CMesh.h"
+#include "cmesh.h"
 #include "ParameterMgr.h"
 #include "Algorithm/PointCloudAlgorithm.h"
 #include "Algorithm/WLOP.h"

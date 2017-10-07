@@ -9,16 +9,16 @@ set (SOURCES
 	./src/ParameterMgr.cpp
 	./src/calculationthread.cpp
 	./src/DataMgr.cpp
-	./src/GLArea.cpp
+	./src/glarea.cpp
 	./src/GLDrawer.cpp
 	./src/GlobalFunction.cpp
 	./src/grid.cpp
 	)
 set (HEADERS
 	./src/calculationthread.h
-	./src/CMesh.h
+	./src/cmesh.h
 	./src/DataMgr.h
-	./src/GLArea.h
+	./src/glarea.h
 	./src/GLDrawer.h
 	./src/GlobalFunction.h
 	./src/grid.h
@@ -78,11 +78,12 @@ set (RESOURCES
 find_package (Qt4 REQUIRED)
 include (${QT_USE_FILE})
 add_definitions (${QT_DEFINITIONS})
-include_directories (${CMAKE_BINARY_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/vcglib" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/glut64/include" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/ann_1.1.2/include")
+include_directories (${CMAKE_BINARY_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/vcglib" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/glut64/include" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/ann_1.1.2/include" "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set (CMAKE_AUTOMOC ON)
 set (CMAKE_AUTOUIC ON)
 set (CMAKE_AUTORCC ON)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
+# set (CMAKE_CXX_STANDARD 11)
 
 # QT meta-system (precompiler)
 QT4_ADD_RESOURCES (RES_SOURCES ${RESOURCES})

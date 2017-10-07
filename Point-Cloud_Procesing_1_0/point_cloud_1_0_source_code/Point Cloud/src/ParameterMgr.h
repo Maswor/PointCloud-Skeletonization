@@ -1,6 +1,6 @@
 #pragma once
 #include "Parameter.h"
-#include "CMesh.h"
+#include "cmesh.h"
 
 class ParameterMgr
 {
