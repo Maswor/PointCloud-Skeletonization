@@ -1,78 +1,78 @@
 cmake_minimum_required(VERSION 3.0)
 project (PointCloud)
 # Sourcecode and shits
-# set (PROJECT_SOURCE_DIR "./src")
+# set (PROJECT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set (SOURCES
-	./src/mainwindow.cpp
-	./src/main.cpp
-	./src/Parameter.cpp
-	./src/ParameterMgr.cpp
-	./src/calculationthread.cpp
-	./src/DataMgr.cpp
-	./src/glarea.cpp
-	./src/GLDrawer.cpp
-	./src/GlobalFunction.cpp
-	./src/grid.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Parameter.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/ParameterMgr.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/calculationthread.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/DataMgr.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/glarea.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/GLDrawer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/GlobalFunction.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/grid.cpp
 	)
 set (HEADERS
-	./src/calculationthread.h
-	./src/cmesh.h
-	./src/DataMgr.h
-	./src/glarea.h
-	./src/GLDrawer.h
-	./src/GlobalFunction.h
-	./src/grid.h
-	./src/mainwindow.h
-	./src/Parameter.h
-	./src/ParameterMgr.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/calculationthread.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/cmesh.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/DataMgr.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/glarea.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/GLDrawer.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/GlobalFunction.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/grid.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Parameter.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/ParameterMgr.h
 	)
 set (HELPERS
-	./src/Console.h
-	./src/Console.cpp
-	./src/plylib.h
-	./src/plylib.cpp
-	./src/plystuff.h
-	./src/trackball.h
-	./src/trackball.cpp
-	./src/trackmode.h
-	./src/trackmode.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Console.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Console.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/plystuff.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/trackball.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/trackball.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/trackmode.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/trackmode.cpp
 	)
 set (ALGORITHM
-	./src/Algorithm/anistropicPCA_Normal.h
-	./src/Algorithm/normal_extrapolation.h
-	./src/Algorithm/NormalSmoother.h
-	./src/Algorithm/NormalSmoother.cpp
-	./src/Algorithm/PointCloudAlgorithm.h
-	./src/Algorithm/Skeleton.h
-	./src/Algorithm/Skeleton.cpp
-	./src/Algorithm/Skeletonization.h
-	./src/Algorithm/Skeletonization.cpp
-	./src/Algorithm/Upsampler.h
-	./src/Algorithm/Upsampler.cpp
-	./src/Algorithm/WLOP.h
-	./src/Algorithm/WLOP.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/anistropicPCA_Normal.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/normal_extrapolation.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/NormalSmoother.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/NormalSmoother.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/PointCloudAlgorithm.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Skeleton.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Skeleton.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Skeletonization.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Skeletonization.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Upsampler.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/Upsampler.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/WLOP.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/Algorithm/WLOP.cpp
 	)
 set (MOC_HEADERS
-	./src/UI/dlg_normal_para.h
-	./src/UI/dlg_skeleton_para.h
-	./src/UI/dlg_upsampling_para.h
-	./src/UI/dlg_wlop_para.h
-	./src/UI/std_para_dlg.h
-	./src/UI/dlg_normal_para.cpp
-	./src/UI/dlg_skeleton_para.cpp
-	./src/UI/dlg_upsampling_para.cpp
-	./src/UI/dlg_wlop_para.cpp
-	./src/UI/std_para_dlg.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_normal_para.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_skeleton_para.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_normal_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_skeleton_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.cpp
 	)
 set (UIS
-	./src/mainwindow.ui
-	./src/UI/normal_para.ui
-	./src/UI/para_skeletonization.ui
-	./src/UI/para_wlop.ui
-	./src/UI/upsampling_para.ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/normal_para.ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/para_skeletonization.ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/para_wlop.ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/upsampling_para.ui
 	)
 set (RESOURCES
-	./src/mainwindow.qrc
+	${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.qrc
 	)
 # Environment setup
 find_package (Qt4 REQUIRED)

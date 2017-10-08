@@ -42,7 +42,6 @@
 //#include "KnnNeighbor.h"
 #include "cmesh.h"
 
-
 template < class VERTEX_CONTAINER >
 class AnistropicPca
 {
@@ -57,6 +56,23 @@ public:
 	typedef typename vcg::Matrix33<ScalarType>  	 MatrixType;
 
 public:
+	class DummyObjectMarker {};
+
+			// Object functor: compute the distance between a vertex and a point
+	struct VertPointDistanceFunctor
+			{
+				inline bool operator()(const VertexType &v, const CoordType &p, ScalarType &d, CoordType &q) const
+				{
+					ScalarType distance = vcg::Distance(p, v.P());
+					if (distance>d)
+						return false;
+
+					d = distance;
+					q = v.P();
+					return true;
+				}
+			};
+			// Plane structure: identify a plain as a <center, normal> pair
 
 	//static void ConvertCMesh2CMeshO(const CMesh &cmesh, CMeshO &cmeshO)
 	//{

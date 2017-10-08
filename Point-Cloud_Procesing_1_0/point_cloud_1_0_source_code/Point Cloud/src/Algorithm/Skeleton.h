@@ -107,7 +107,7 @@ public:
 		branch_num = s.branch_num;
 	}
 
-	Skeleton & Skeleton::operator = (const Skeleton& s)
+	Skeleton & operator = (const Skeleton& s)
 	{
 		branches = s.branches;
 		size = s.size;
