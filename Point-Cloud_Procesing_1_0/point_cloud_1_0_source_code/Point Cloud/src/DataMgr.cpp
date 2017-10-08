@@ -258,10 +258,10 @@ double DataMgr::getInitRadiuse()
 			init_radius = init_para * diagonal_length / original_size;
 		}
 	}
-
- 
-  global_paraMgr.setGlobalParameter("CGrid Radius", DoubleValue(init_radius));
-  global_paraMgr.setGlobalParameter("Initial Radius", DoubleValue(init_radius));
+	
+  DoubleValue double_init_radius = DoubleValue(init_radius);
+  global_paraMgr.setGlobalParameter("CGrid Radius", double_init_radius);
+  global_paraMgr.setGlobalParameter("Initial Radius", double_init_radius);
 
 	return init_radius;
 }
