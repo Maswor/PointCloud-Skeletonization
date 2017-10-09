@@ -109,7 +109,7 @@ Adding copyright.
 
 ****************************************************************************/
 
-#include <GL/glew.h>
+#include <gl/glew.h>
 #include <vcg/space/distance3.h>
 #include <wrap/gui/trackmode.h>
 #include <wrap/gui/trackball.h>

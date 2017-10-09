@@ -109,7 +109,7 @@ Adding copyright.
 
 ****************************************************************************/
 
-#include <GL/glew.h>
+#include <gl/glew.h>
 #include "trackball.h"
 #include<set>
 
