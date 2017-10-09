@@ -1,4 +1,4 @@
-#include "GLArea.h"
+#include "glarea.h"
 
 GLArea::GLArea(QWidget *parent): QGLWidget(/*QGLFormat(QGL::DoubleBuffer | QGL::DepthBuffer |QGL::SampleBuffers),*/ parent),
 	               para(global_paraMgr.getGlareaParameterSet()),
@@ -905,7 +905,8 @@ void GLArea::saveSnapshot()
 
 		ss.basename = QString::number(snape_idx++,10); 
 		double snap_id = para->getDouble("Snapshot Index");
-		global_paraMgr.setGlobalParameter("Snapshot Index", DoubleValue(snap_id));
+		auto DoubleValue_snap_id = DoubleValue(snap_id);
+		global_paraMgr.setGlobalParameter("Snapshot Index", DoubleValue_snap_id );
 		emit needUpdateStatus();
 	
 		para->setValue("Snapshot Index", DoubleValue(snape_idx));
@@ -1138,15 +1139,24 @@ void GLArea::saveView(QString fileName)
 	outfile << global_paraMgr.drawer.getDouble("Skeleton Node Size") << endl;
 	outfile << global_paraMgr.drawer.getDouble("Skeleton Branch Size") << endl;
 
-	outputColor(outfile, global_paraMgr.drawer.getColor("Sample Point Color"));
-	outputColor(outfile, global_paraMgr.drawer.getColor("Original Point Color"));
-	outputColor(outfile, global_paraMgr.glarea.getColor("Light Ambient Color"));
-	outputColor(outfile, global_paraMgr.glarea.getColor("Light Diffuse Color"));
-	outputColor(outfile, global_paraMgr.glarea.getColor("Light Specular Color"));
-	outputColor(outfile, global_paraMgr.drawer.getColor("Skeleton Bone Color"));
-	outputColor(outfile, global_paraMgr.drawer.getColor("Skeleton Node Color"));
-	outputColor(outfile, global_paraMgr.drawer.getColor("Skeleton Branch Color"));
-	outputColor(outfile, global_paraMgr.drawer.getColor("Normal Line Color"));
+	auto temp_color = global_paraMgr.drawer.getColor("Sample Point Color");
+	outputColor(outfile, temp_color);
+	auto temp_color2 =  global_paraMgr.drawer.getColor("Original Point Color");
+	outputColor(outfile, temp_color2);
+	auto temp_color3 = global_paraMgr.glarea.getColor("Light Ambient Color");
+	outputColor(outfile, temp_color3);
+	auto temp_color4 = global_paraMgr.glarea.getColor("Light Diffuse Color");
+	outputColor(outfile, temp_color4);
+	auto temp_color5 = global_paraMgr.glarea.getColor("Light Specular Color");
+	outputColor(outfile, temp_color5);
+	auto temp_color6 = global_paraMgr.drawer.getColor("Skeleton Bone Color");
+	outputColor(outfile, temp_color6);
+	auto temp_color7 = global_paraMgr.drawer.getColor("Skeleton Node Color");
+	outputColor(outfile, temp_color7);
+	auto temp_color8 = global_paraMgr.drawer.getColor("Skeleton Branch Color");
+	outputColor(outfile, temp_color8);
+	auto temp_color9 = global_paraMgr.drawer.getColor("Normal Line Color");
+	outputColor(outfile, temp_color9);
 
 
 	outfile << global_paraMgr.wLop.getDouble("CGrid Radius") << endl;
@@ -1192,7 +1202,8 @@ void GLArea::loadView(QString fileName)
 
 	double radius;
 	infile >> radius;
-	global_paraMgr.setGlobalParameter("CGrid Radius", DoubleValue(radius));
+	auto temp_radius2 = DoubleValue(radius);
+	global_paraMgr.setGlobalParameter("CGrid Radius", temp_radius2);
 
 	infile >> temp >> temp >> temp;
 
@@ -1244,7 +1255,8 @@ void GLArea::loadView(QString fileName)
 	if (!infile.eof())
 	{
 		infile >> temp;
-		global_paraMgr.setGlobalParameter("CGrid Radius", DoubleValue(temp));
+		auto temp_temp = DoubleValue(temp);
+		global_paraMgr.setGlobalParameter("CGrid Radius", temp_temp);
 
 		infile >> temp;
 		//global_paraMgr.setGlobalParameter("Local Density Radius", DoubleValue(temp));
@@ -1282,11 +1294,13 @@ void GLArea::loadView(QString fileName)
 		infile >> init_radius;
 		if (init_radius > 0)
 		{
-			global_paraMgr.setGlobalParameter("Initial Radius", DoubleValue(init_radius));
+			auto temp_radius3 = DoubleValue(init_radius);
+			global_paraMgr.setGlobalParameter("Initial Radius", temp_radius3);
 		}
 		else
 		{
-			global_paraMgr.setGlobalParameter("Initial Radius", DoubleValue(global_paraMgr.wLop.getDouble("CGrid Radius")));
+			auto temp_radius4 = DoubleValue(global_paraMgr.wLop.getDouble("CGrid Radius"));
+			global_paraMgr.setGlobalParameter("Initial Radius", temp_radius4);
 		}
 	}
 
@@ -1414,19 +1428,24 @@ void GLArea::wheelEvent(QWheelEvent *e)
       else
       {
         size_temp = global_paraMgr.data.getDouble("Down Sample Num");
-        global_paraMgr.setGlobalParameter("Down Sample Num", DoubleValue(size_temp * change));
+	auto temp_change = DoubleValue(size_temp * change);
+        global_paraMgr.setGlobalParameter("Down Sample Num", temp_change);
         emit needUpdateStatus();
       }
 
 			break;
 
 		case  Qt::AltModifier:
+			{
 			size_temp = global_paraMgr.data.getDouble("CGrid Radius");
-			global_paraMgr.setGlobalParameter("CGrid Radius", DoubleValue(size_temp * change));
-      global_paraMgr.setGlobalParameter("Initial Radius", DoubleValue(size_temp * change));
+			auto temp_change2 = DoubleValue(size_temp * change);
+			global_paraMgr.setGlobalParameter("CGrid Radius", temp_change2);
+			auto temp_change3 = DoubleValue(size_temp * change);
+      global_paraMgr.setGlobalParameter("Initial Radius", temp_change3);
 
 			initSetting();
 			break;
+			}
 
 		default:
 			trackball.MouseWheel( e->delta()/ float(WHEEL_STEP));
