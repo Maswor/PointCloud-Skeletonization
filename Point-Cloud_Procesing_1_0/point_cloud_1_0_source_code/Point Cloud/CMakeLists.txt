@@ -27,8 +27,8 @@ set (HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/src/ParameterMgr.h
 	)
 set (HELPERS
-	${CMAKE_CURRENT_SOURCE_DIR}/src/Console.h
-	${CMAKE_CURRENT_SOURCE_DIR}/src/Console.cpp
+	#${CMAKE_CURRENT_SOURCE_DIR}/src/Console.h
+	#${CMAKE_CURRENT_SOURCE_DIR}/src/Console.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plystuff.h
