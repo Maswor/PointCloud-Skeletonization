@@ -13,6 +13,12 @@ set (SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/GLDrawer.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/GlobalFunction.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/grid.cpp
+
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_normal_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_skeleton_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.cpp
 	)
 set (HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/src/calculationthread.h
@@ -27,8 +33,8 @@ set (HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/src/ParameterMgr.h
 	)
 set (HELPERS
-	#${CMAKE_CURRENT_SOURCE_DIR}/src/Console.h
-	#${CMAKE_CURRENT_SOURCE_DIR}/src/Console.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/Console.h
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/Console.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plylib.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/plystuff.h
@@ -58,11 +64,11 @@ set (MOC_HEADERS
 	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.h
-	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_normal_para.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_skeleton_para.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_normal_para.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_skeleton_para.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_upsampling_para.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/UI/dlg_wlop_para.cpp
+	# ${CMAKE_CURRENT_SOURCE_DIR}/src/UI/std_para_dlg.cpp
 	)
 set (UIS
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.ui
@@ -78,7 +84,7 @@ set (RESOURCES
 find_package (Qt4 REQUIRED)
 include (${QT_USE_FILE})
 add_definitions (${QT_DEFINITIONS})
-include_directories (${CMAKE_BINARY_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/vcglib" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/glut64/include" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/ann_1.1.2/include" "${CMAKE_CURRENT_SOURCE_DIR}/src")
+include_directories (${CMAKE_BINARY_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/vcglib" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/glut64/include" "${CMAKE_CURRENT_SOURCE_DIR}/src/IncludeLib/ann_1.1.2/include" "${CMAKE_CURRENT_SOURCE_DIR}/src" )
 set (CMAKE_AUTOMOC ON)
 set (CMAKE_AUTOUIC ON)
 set (CMAKE_AUTORCC ON)
@@ -86,11 +92,12 @@ set (CMAKE_INCLUDE_CURRENT_DIR ON)
 # set (CMAKE_CXX_STANDARD 11)
 
 # QT meta-system (precompiler)
-QT4_ADD_RESOURCES (RES_SOURCES ${RESOURCES})
-QT4_WRAP_UI (UI_HEADERS ${UIS})
-QT4_WRAP_CPP (MOC_SRCS ${MOC_HEADERS})
+# QT4_ADD_RESOURCES (RES_SOURCES ${RESOURCES})
+# QT4_WRAP_UI (UI_HEADERS ${UIS})
+# QT4_WRAP_CPP (MOC_SRCS ${MOC_HEADERS})
 
 # Compile-time variables
-add_executable(PointCloud ${SOURCES} ${HEADERS} ${HELPERS} ${ALGORITHM} ${MOC_SRCS} ${RES_SOURCES} ${UI_HEADERS})
-target_link_libraries(PointCloud ${QT_LIBRARIES})
+# add_executable(PointCloud ${SOURCES} ${HEADERS} ${HELPERS} ${ALGORITHM} ${MOC_SRCS} ${RES_SOURCES} ${UI_HEADERS})
+add_executable(PointCloud ${SOURCES} ${HEADERS} ${HELPERS} ${ALGORITHM} ${RESOURCES} ${UIS} ${MOC_HEADERS})
+target_link_libraries(PointCloud Qt4::QtOpenGL Qt4::QtGui Qt4::QtCore ${QT_LIBRARIES} GL)
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
