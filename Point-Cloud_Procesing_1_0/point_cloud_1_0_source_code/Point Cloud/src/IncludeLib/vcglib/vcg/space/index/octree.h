@@ -288,7 +288,7 @@ public:
 				{
 					int placeholder_index = int(placeholders.size());
 					placeholders.push_back( ObjectPlaceholder< NodeType >() ); 
-					placeholders[placeholder_index].z_order			 = this->BuildRoute(hit_leaf, route);
+					placeholders[placeholder_index].z_order			 = BuildRoute(hit_leaf, route);
 					placeholders[placeholder_index].leaf_pointer = route[depth];
 					placeholders[placeholder_index].object_index = i;					
 					
@@ -631,7 +631,7 @@ OBJECT_RETRIEVER:
 				query_bb.Offset(TemplatedOctree::leafDiagonal);
 				sphere_radius+= TemplatedOctree::leafDiagonal;
 
-				this->ContainedLeaves(query_bb, leaves, TemplatedOctree::Root(), TemplatedOctree::boundingBox);
+				ContainedLeaves(query_bb, leaves, TemplatedOctree::Root(), TemplatedOctree::boundingBox);
 
 				leaves_count = int(leaves.size());
 				object_count = 0;
@@ -724,10 +724,10 @@ OBJECT_RETRIEVER:
 			VoxelPointer son_voxel;
 			for (int s=0; s<8; s++)
 			{
-				NodePointer son_index = this->Son(n, s);
+				NodePointer son_index = Son(n, s);
 				if (son_index!=NULL)
 				{
-					if (this->Level(son_index)!=TemplatedOctree::maximumDepth)
+					if (Level(son_index)!=TemplatedOctree::maximumDepth)
 						IndexInnerNodes(son_index);
 
 					son_voxel = TemplatedOctree::Voxel(son_index);
