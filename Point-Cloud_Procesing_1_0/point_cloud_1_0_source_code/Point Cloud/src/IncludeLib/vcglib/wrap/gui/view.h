@@ -80,10 +80,10 @@ the 0,0 is bottom left
 y is upward!
 **********************/
 
-#include <vcg/space/point3.h>
-#include <vcg/space/plane3.h>
-#include <vcg/space/line3.h>
 #include <vcg/math/matrix44.h>
+#include <vcg/space/line3.h>
+#include <vcg/space/plane3.h>
+#include <vcg/space/point3.h>
 #include <wrap/gl/math.h>
 
 #ifdef WIN32
@@ -106,138 +106,154 @@ Note: mainly it is used only by the TrackBall.
 
 */
 
-template <class T> class View {
+template <class T>
+class View {
 public:
-  void GetView();
-  void SetView(const float *_proj, const float *_modelview, const int *_viewport);
-  Point3<T> Project(const Point3<T> &p) const;
-  Point3<T> UnProject(const Point3<T> &p) const;
-  Point3<T> ViewPoint() const;
+    void GetView();
+    void SetView(const float* _proj = NULL, const float* _modelview = NULL, const int* _viewport = NULL);
+    Point3<T> Project(const Point3<T>& p) const;
+    Point3<T> UnProject(const Point3<T>& p) const;
+    Point3<T> ViewPoint() const;
 
-  /// Return the plane perpendicular to the view axis and passing through point P.
-  Plane3<T> ViewPlaneFromModel(const Point3<T> &p);
+    /// Return the plane perpendicular to the view axis and passing through point P.
+    Plane3<T> ViewPlaneFromModel(const Point3<T>& p);
 
-  /// Return the line of view passing through point P.
-  Line3<T> ViewLineFromModel(const Point3<T> &p);
-  
-  /// Return the line passing through the point p and the observer.
-  Line3<T> ViewLineFromWindow(const Point3<T> &p);
-  
-  /// Convert coordinates from the range -1..1 of Normalized Device Coords to range 0 viewport[2]
-  Point3<T> NormDevCoordToWindowCoord(const Point3<T> &p) const;
-  
-  /// Convert coordinates from 0--viewport[2] to the range -1..1 of Normalized Device Coords to
-  Point3<T> WindowCoordToNormDevCoord(const Point3<T> &p) const;
+    /// Return the line of view passing through point P.
+    Line3<T> ViewLineFromModel(const Point3<T>& p);
 
-  Matrix44<T> proj;
-  Matrix44<T> model;
-  Matrix44<T> matrix;
-  Matrix44<T> inverse;  
-  int viewport[4];    
+    /// Return the line passing through the point p and the observer.
+    Line3<T> ViewLineFromWindow(const Point3<T>& p);
+
+    /// Convert coordinates from the range -1..1 of Normalized Device Coords to range 0 viewport[2]
+    Point3<T> NormDevCoordToWindowCoord(const Point3<T>& p) const;
+
+    /// Convert coordinates from 0--viewport[2] to the range -1..1 of Normalized Device Coords to
+    Point3<T> WindowCoordToNormDevCoord(const Point3<T>& p) const;
+
+    Matrix44<T> proj;
+    Matrix44<T> model;
+    Matrix44<T> matrix;
+    Matrix44<T> inverse;
+    int viewport[4];
 };
 
-template <class T> void View<T>::GetView() {
-	glGetv(GL_PROJECTION_MATRIX,proj);
-	glGetv(GL_MODELVIEW_MATRIX,model);
-	glGetIntegerv(GL_VIEWPORT, (GLint*)viewport);
+template <class T>
+void View<T>::GetView()
+{
+    glGetv(GL_PROJECTION_MATRIX, proj);
+    glGetv(GL_MODELVIEW_MATRIX, model);
+    glGetIntegerv(GL_VIEWPORT, (GLint*)viewport);
 
-	matrix = proj*model;
-	inverse = matrix;
-	Invert(inverse);
+    matrix = proj * model;
+    inverse = matrix;
+    Invert(inverse);
 }
 
-template <class T> void View<T>::SetView(const float *_proj = NULL,
-                                         const float *_modelview = NULL,
-                                         const int *_viewport = NULL) {
-  for(int i = 0; i < 4; i++) {
-    for(int k =0; k < 4; k++) {
-      proj[i][k] = _proj[4*i+k];
-      model[i][k] = _modelview[4*i+k];
+template <class T>
+void View<T>::SetView(const float* _proj,
+    const float* _modelview,
+    const int* _viewport)
+{
+    for (int i = 0; i < 4; i++) {
+	for (int k = 0; k < 4; k++) {
+	    proj[i][k] = _proj[4 * i + k];
+	    model[i][k] = _modelview[4 * i + k];
+	}
+	viewport[i] = _viewport[i];
     }
-    viewport[i] = _viewport[i];
-  }
-  matrix = proj*model;
-  inverse = matrix;
-  Invert(inverse);
+    matrix = proj * model;
+    inverse = matrix;
+    Invert(inverse);
 }
 
-template <class T> Point3<T> View<T>::ViewPoint() const {
-  Matrix44<T> mi=model;
-  Invert(mi);
-  return mi* Point3<T>(0, 0, 0);
+template <class T>
+Point3<T> View<T>::ViewPoint() const
+{
+    Matrix44<T> mi = model;
+    Invert(mi);
+    return mi * Point3<T>(0, 0, 0);
 }
 // Note that p it is assumed to be in model coordinate.
-template <class T> Plane3<T> View<T>::ViewPlaneFromModel(const Point3<T> &p)
+template <class T>
+Plane3<T> View<T>::ViewPlaneFromModel(const Point3<T>& p)
 {
-  //compute normal, pointing away from view.
-  Matrix44<T> imodel = model;
-  Invert(imodel);
-  Point3<T> vp=ViewPoint();
-  vcg::Point3f n = imodel * vcg::Point3<T>(0.0f, 0, -1.0f) - vp;
+    //compute normal, pointing away from view.
+    Matrix44<T> imodel = model;
+    Invert(imodel);
+    Point3<T> vp = ViewPoint();
+    vcg::Point3f n = imodel * vcg::Point3<T>(0.0f, 0, -1.0f) - vp;
 
-  Plane3<T> pl;
-  pl.Init(p, n);
-  return pl;
+    Plane3<T> pl;
+    pl.Init(p, n);
+    return pl;
 }
 
 // Note that p it is assumed to be in model coordinate.
-template <class T> Line3<T> View<T>::ViewLineFromModel(const Point3<T> &p)
+template <class T>
+Line3<T> View<T>::ViewLineFromModel(const Point3<T>& p)
 {
-  Point3<T> vp=ViewPoint();
-  Line3<T> line;
-  line.SetOrigin(vp);
-  line.SetDirection(p - vp);
-  return line;
+    Point3<T> vp = ViewPoint();
+    Line3<T> line;
+    line.SetOrigin(vp);
+    line.SetDirection(p - vp);
+    return line;
 }
 
 // Note that p it is assumed to be in window coordinate.
-template <class T> Line3<T> View<T>::ViewLineFromWindow(const Point3<T> &p)
+template <class T>
+Line3<T> View<T>::ViewLineFromWindow(const Point3<T>& p)
 {
-	Line3<T> ln;  // plane perpedicular to view direction and passing through manip center
-	Point3<T> vp=ViewPoint();
-	Point3<T> pp=UnProject(p);
-	ln.SetOrigin(vp);
-	ln.SetDirection(pp-vp);
-	return ln;
+    Line3<T> ln; // plane perpedicular to view direction and passing through manip center
+    Point3<T> vp = ViewPoint();
+    Point3<T> pp = UnProject(p);
+    ln.SetOrigin(vp);
+    ln.SetDirection(pp - vp);
+    return ln;
 }
 
-template <class T> Point3<T> View<T>::Project(const Point3<T> &p) const {
-  Point3<T> r;
-  r = matrix * p;
-  return NormDevCoordToWindowCoord(r);
- }
+template <class T>
+Point3<T> View<T>::Project(const Point3<T>& p) const
+{
+    Point3<T> r;
+    r = matrix * p;
+    return NormDevCoordToWindowCoord(r);
+}
 
-template <class T> Point3<T> View<T>::UnProject(const Point3<T> &p) const {
-  Point3<T> s = WindowCoordToNormDevCoord(p);
-  s =  inverse * s ;
-  return s;
+template <class T>
+Point3<T> View<T>::UnProject(const Point3<T>& p) const
+{
+    Point3<T> s = WindowCoordToNormDevCoord(p);
+    s = inverse * s;
+    return s;
 }
 
 // Come spiegato nelle glspec
-// dopo la perspective division le coordinate sono dette normalized device coords ( NDC ). 
+// dopo la perspective division le coordinate sono dette normalized device coords ( NDC ).
 // Per passare alle window coords si deve fare la viewport transformation.
 // Le coordinate di viewport stanno tra -1 e 1
 
-template <class T> Point3<T> View<T>::NormDevCoordToWindowCoord(const Point3<T> &p) const {
-  Point3<T> a;
-  a[0] = (p[0]+1)*(viewport[2]/(T)2.0)+viewport[0];
-	a[1] = (p[1]+1)*(viewport[3]/(T)2.0)+viewport[1];
-  //a[1] = viewport[3] - a[1];
-  a[2] = (p[2]+1)/2;
-  return a;
+template <class T>
+Point3<T> View<T>::NormDevCoordToWindowCoord(const Point3<T>& p) const
+{
+    Point3<T> a;
+    a[0] = (p[0] + 1) * (viewport[2] / (T)2.0) + viewport[0];
+    a[1] = (p[1] + 1) * (viewport[3] / (T)2.0) + viewport[1];
+    //a[1] = viewport[3] - a[1];
+    a[2] = (p[2] + 1) / 2;
+    return a;
 }
 
-
-template <class T> Point3<T> View<T>::WindowCoordToNormDevCoord(const Point3<T> &p) const {
-  Point3<T> a;
-  a[0] = (p[0]- viewport[0])/ (viewport[2]/(T)2.0) - 1;
-	a[1] = (p[1]- viewport[1])/ (viewport[3]/(T)2.0) - 1;
-  //a[1] = -a[1];
-	a[2] = 2*p[2] - 1;
-  return a;
+template <class T>
+Point3<T> View<T>::WindowCoordToNormDevCoord(const Point3<T>& p) const
+{
+    Point3<T> a;
+    a[0] = (p[0] - viewport[0]) / (viewport[2] / (T)2.0) - 1;
+    a[1] = (p[1] - viewport[1]) / (viewport[3] / (T)2.0) - 1;
+    //a[1] = -a[1];
+    a[2] = 2 * p[2] - 1;
+    return a;
 }
 
-
-}//namespace
+} //namespace
 
 #endif
