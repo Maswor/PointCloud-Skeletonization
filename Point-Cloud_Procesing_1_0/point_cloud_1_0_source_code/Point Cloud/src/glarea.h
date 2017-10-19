@@ -19,14 +19,17 @@
 #include <wrap/io_trimesh/import.h>
 
 #include "Algorithm/NormalSmoother.h"
+
+#include "DataMgr.h"
+#include "GLDrawer.h"
+#include "cmesh.h"
+
+#include "ParameterMgr.h"
+
 #include "Algorithm/PointCloudAlgorithm.h"
 #include "Algorithm/Skeletonization.h"
 #include "Algorithm/Upsampler.h"
 #include "Algorithm/WLOP.h"
-#include "DataMgr.h"
-#include "GLDrawer.h"
-#include "ParameterMgr.h"
-#include "cmesh.h"
 
 using std::cout;
 using std::endl;

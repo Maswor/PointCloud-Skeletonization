@@ -599,7 +599,7 @@ protected:
 	    query_bb.Offset(TemplatedOctree::leafDiagonal);
 	    sphere_radius += TemplatedOctree::leafDiagonal;
 
-	    ContainedLeaves(query_bb, leaves, TemplatedOctree::Root(), TemplatedOctree::boundingBox);
+	    this->ContainedLeaves(query_bb, leaves, TemplatedOctree::Root(), TemplatedOctree::boundingBox);
 
 	    leaves_count = int(leaves.size());
 	    object_count = 0;
@@ -683,9 +683,9 @@ protected:
 	VoxelPointer current_voxel = TemplatedOctree::Voxel(n);
 	VoxelPointer son_voxel;
 	for (int s = 0; s < 8; s++) {
-	    NodePointer son_index = Son(n, s);
+	    NodePointer son_index = this->Son(n, s);
 	    if (son_index != NULL) {
-		if (Level(son_index) != TemplatedOctree::maximumDepth)
+		if (this->Level(son_index) != TemplatedOctree::maximumDepth)
 		    IndexInnerNodes(son_index);
 
 		son_voxel = TemplatedOctree::Voxel(son_index);

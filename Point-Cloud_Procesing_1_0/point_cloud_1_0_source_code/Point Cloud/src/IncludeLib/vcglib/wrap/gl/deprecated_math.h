@@ -60,85 +60,96 @@ Revision 1.1  2004/03/31 15:27:17  ponchio
 #ifndef VCG_GL_MATH_H
 #define VCG_GL_MATH_H
 
-// Please note that this file assume that you have already included your 
+// Please note that this file assume that you have already included your
 // gl-extension wrapping utility, and that therefore all the extension symbol are already defined.
 
+// #include <GL/glew.h> // please do not include it!
 #include <vcg/math/matrix44.h>
 #include <vcg/math/similarity.h>
-//#include <GL/glew.h> // please do not include it!
-
 
 namespace vcg {
 
-inline void glMultMatrixE(const Matrix44f &matrix) {
-  //glMultMatrixf((const GLfloat *)(matrix[0]));  
-  if(glMultTransposeMatrixf) glMultTransposeMatrixf((const GLfloat *)(matrix.V())); 
-  else  {
-    glMultMatrixf((const GLfloat *)(matrix.transpose().V()));
-  }
+inline void glMultMatrixE(const Matrix44f& matrix)
+{
+    //glMultMatrixf((const GLfloat *)(matrix[0]));
+    if (glMultTransposeMatrixf)
+	glMultTransposeMatrixf((const GLfloat*)(matrix.V()));
+    else {
+	glMultMatrixf((const GLfloat*)(matrix.transpose().V()));
+    }
 }
 
-inline void glMultMatrix(const Matrix44f &matrix) {
-    glMultMatrixf((const GLfloat *)(matrix.transpose().V()));
+inline void glMultMatrix(const Matrix44f& matrix)
+{
+    glMultMatrixf((const GLfloat*)(matrix.transpose().V()));
 }
 
-inline void glMultMatrixE(const Matrix44d &matrix) {
-  if(glMultTransposeMatrixd) glMultTransposeMatrixd((const GLdouble *)(matrix.V())); 
-  else  {
-    glMultMatrixd((const GLdouble *)(matrix.transpose().V()));
-  }
+inline void glMultMatrixE(const Matrix44d& matrix)
+{
+    if (glMultTransposeMatrixd)
+	glMultTransposeMatrixd((const GLdouble*)(matrix.V()));
+    else {
+	glMultMatrixd((const GLdouble*)(matrix.transpose().V()));
+    }
 }
-inline void glMultMatrix(const Matrix44d &matrix) {
-    glMultMatrixd((const GLdouble *)(matrix.transpose().V()));
-}
-
-inline void glMultMatrixDirect(const Matrix44f &matrix) {
-   glMultMatrixf((const GLfloat *)(matrix.V()));
-}
-
-inline void glMultMatrixDirect(const Matrix44d &matrix) {
-   glMultMatrixd((const GLdouble *)(matrix.V()));
+inline void glMultMatrix(const Matrix44d& matrix)
+{
+    glMultMatrixd((const GLdouble*)(matrix.transpose().V()));
 }
 
-inline void glMultMatrix(const Similarityf &s) {
-  glTranslatef(s.tra[0], s.tra[1], s.tra[2]);
-  glScalef(s.sca, s.sca, s.sca);
-  float alpha;
-  Point3f axis;
-  s.rot.ToAxis(alpha, axis);    
-  glRotatef(math::ToDeg(alpha), axis[0], axis[1], axis[2]);    
-  
+inline void glMultMatrixDirect(const Matrix44f& matrix)
+{
+    glMultMatrixf((const GLfloat*)(matrix.V()));
 }
 
-inline void glMultMatrix(const Similarityd &s) {
-  glTranslated(s.tra[0], s.tra[1], s.tra[2]);
-  double alpha;
-  Point3d axis;
-  s.rot.ToAxis(alpha, axis);
-  glRotated(math::ToDeg(alpha), axis[0], axis[1], axis[2]);
-  glScaled(s.sca, s.sca, s.sca);
+inline void glMultMatrixDirect(const Matrix44d& matrix)
+{
+    glMultMatrixd((const GLdouble*)(matrix.V()));
 }
 
-inline void glGetv(const GLenum  pname, Matrix44f  & m){
-	Matrix44f tmp;
-	glGetFloatv(pname,tmp.V());
-  m = tmp.transpose();
+inline void glMultMatrix(const Similarityf& s)
+{
+    glTranslatef(s.tra[0], s.tra[1], s.tra[2]);
+    glScalef(s.sca, s.sca, s.sca);
+    float alpha;
+    Point3f axis;
+    s.rot.ToAxis(alpha, axis);
+    glRotatef(math::ToDeg(alpha), axis[0], axis[1], axis[2]);
 }
 
-inline void glGetv(const GLenum  pname, Matrix44d  & m){
-  Matrix44d tmp;
-	glGetDoublev(pname,tmp.V());
-  m = tmp.transpose();
+inline void glMultMatrix(const Similarityd& s)
+{
+    glTranslated(s.tra[0], s.tra[1], s.tra[2]);
+    double alpha;
+    Point3d axis;
+    s.rot.ToAxis(alpha, axis);
+    glRotated(math::ToDeg(alpha), axis[0], axis[1], axis[2]);
+    glScaled(s.sca, s.sca, s.sca);
 }
 
-inline void glGetDirectv(const GLenum  pname, Matrix44f  & m){
-	glGetFloatv(pname,m.V());
+inline void glGetv(const GLenum pname, Matrix44f& m)
+{
+    Matrix44f tmp;
+    glGetFloatv(pname, tmp.V());
+    m = tmp.transpose();
 }
 
-inline void glGetDirecv(const GLenum  pname, Matrix44d  & m){
-	glGetDoublev(pname,m.V());
+inline void glGetv(const GLenum pname, Matrix44d& m)
+{
+    Matrix44d tmp;
+    glGetDoublev(pname, tmp.V());
+    m = tmp.transpose();
 }
 
+inline void glGetDirectv(const GLenum pname, Matrix44f& m)
+{
+    glGetFloatv(pname, m.V());
+}
 
-}//namespace
+inline void glGetDirecv(const GLenum pname, Matrix44d& m)
+{
+    glGetDoublev(pname, m.V());
+}
+
+} //namespace
 #endif

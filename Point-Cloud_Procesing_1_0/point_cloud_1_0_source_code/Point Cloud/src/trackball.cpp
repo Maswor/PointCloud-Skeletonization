@@ -108,11 +108,11 @@ Adding copyright.
 
 
 ****************************************************************************/
+// glew has to be import first, clangformat fuck up header file
+#include <GL/glew.h>
 
 #include "trackball.h"
-#include <GL/glew.h>
 #include <set>
-
 #include <wrap/gl/math.h>
 #include <wrap/gl/space.h>
 
