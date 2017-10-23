@@ -1,12 +1,13 @@
+#include "Console.h"
 #include "mainwindow.h"
 #include <QtGui/QApplication>
-// #include "Console.h"
 
 //函数入口，一般不做修改
 int main(int argc, char* argv[])
 {
     // CConsoleOutput::Instance();
     //QApplication app(argc, argv);
+    glutInit(&argc, argv);
     QApplication::setStyle(QStyleFactory::create("cleanlooks"));
     /* 
 	"windows", "motif", "cde", "plastique" and "cleanlooks". Depending on the platform, "windowsxp", "windowsvista" and "macintosh" may be available.
