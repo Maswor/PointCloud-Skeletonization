@@ -106,3 +106,4 @@ add_executable(PointCloud ${SOURCES} ${HEADERS} ${HELPERS} ${ALGORITHM} ${RESOUR
 target_link_libraries(PointCloud Qt4::QtOpenGL Qt4::QtGui Qt4::QtCore ${QT_LIBRARIES} ${GLEW_LIBRARIES} ${OPENGL_LIBRARY} ${GLUT_LIBRARY} ANN)
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set (CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "-O3 -march=native")
