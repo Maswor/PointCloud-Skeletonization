@@ -195,7 +195,7 @@
             <number>4</number>
            </property>
            <property name="maximum">
-            <double>1000.000000000000000</double>
+            <double>10000.000000000000000</double>
            </property>
            <property name="singleStep">
             <double>0.100000000000000</double>
@@ -247,7 +247,7 @@
        <x>10</x>
        <y>30</y>
        <width>321</width>
-       <height>201</height>
+       <height>218</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -643,7 +643,7 @@
        <x>10</x>
        <y>530</y>
        <width>321</width>
-       <height>53</height>
+       <height>61</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1023,8 +1023,6 @@
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="../mainwindow.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

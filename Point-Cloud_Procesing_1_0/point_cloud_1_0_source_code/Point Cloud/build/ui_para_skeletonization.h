@@ -240,7 +240,7 @@ public:
         skeleton_downsample_num = new QDoubleSpinBox(layoutWidget);
         skeleton_downsample_num->setObjectName(QString::fromUtf8("skeleton_downsample_num"));
         skeleton_downsample_num->setDecimals(4);
-        skeleton_downsample_num->setMaximum(1000);
+        skeleton_downsample_num->setMaximum(10000);
         skeleton_downsample_num->setSingleStep(0.1);
         skeleton_downsample_num->setValue(1);
 
@@ -263,7 +263,7 @@ public:
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         layoutWidget1 = new QWidget(tab_4);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 30, 321, 201));
+        layoutWidget1->setGeometry(QRect(10, 30, 321, 218));
         verticalLayout_3 = new QVBoxLayout(layoutWidget1);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -537,7 +537,7 @@ public:
 
         layoutWidget3 = new QWidget(tab_4);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(10, 530, 321, 53));
+        layoutWidget3->setGeometry(QRect(10, 530, 321, 61));
         verticalLayout_5 = new QVBoxLayout(layoutWidget3);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
