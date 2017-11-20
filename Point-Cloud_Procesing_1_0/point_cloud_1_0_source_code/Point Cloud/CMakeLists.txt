@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project (PointCloud)
-set(CMAKE_CXX_FLAGS "-O3 -march=native")
+set(CMAKE_CXX_FLAGS "-O3 -march=native -pipe")
 # Sourcecode and shits
 # set (PROJECT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 set (SOURCES
