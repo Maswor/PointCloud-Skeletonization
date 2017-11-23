@@ -1,20 +1,24 @@
 
 
 #pragma once
-#include <vector>
 #include "cmesh.h"
 #include "grid.h"
+#include <vector>
 //#include "LAP_Others/eigen.h"
-#include <fstream>
-#include <float.h>
-#include <QString>
-#include <iostream>
-#include <time.h>
-#include <string>
-#include <ctime>
-#include<algorithm>
-#include <math.h>
 #include "ANN/ANN.h"
+#include <QString>
+#include <algorithm>
+#include <ctime>
+#include <float.h>
+#include <fstream>
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <time.h>
+
+#include <algorithm>
+#include <gsl/gsl_qrng.h>
+#include <vector>
 
 #define EIGEN_DEFAULT_TO_ROW_MAJOR
 #define EIGEN_EXCEPTIONS
@@ -24,81 +28,73 @@
 using namespace std;
 using namespace vcg;
 
-
 //typedef Eigen::MatrixXd Matrix;
 
-#define MyMax(a,b) (((a) > (b)) ? (a) : (b))  
-#define MyMin(a,b) (((a) < (b)) ? (a) : (b))  
+#define MyMax(a, b) (((a) > (b)) ? (a) : (b))
+#define MyMin(a, b) (((a) < (b)) ? (a) : (b))
 
+namespace GlobalFun {
+void computeKnnNeigbhors(vector<CVertex>& datapts, vector<CVertex>& querypts, int numKnn, bool need_self_included, QString purpose);
+void computeEigen(CMesh* _samples);
+void computeEigenIgnoreBranchedPoints(CMesh* _samples);
+void computeEigenWithTheta(CMesh* _samples, double radius);
 
-namespace GlobalFun
-{
-	void computeKnnNeigbhors(vector<CVertex> &datapts, vector<CVertex> &querypts, int numKnn, bool need_self_included, QString purpose);
-	void computeEigen(CMesh* _samples);
-	void computeEigenIgnoreBranchedPoints(CMesh* _samples);
-	void computeEigenWithTheta(CMesh* _samples, double radius);
+void computeAnnNeigbhors(vector<CVertex>& datapts, vector<CVertex>& querypts, int numKnn, bool need_self_included, QString purpose);
+void computeBallNeighbors(CMesh* mesh0, CMesh* mesh1, double radius, vcg::Box3f& box);
 
-	void computeAnnNeigbhors(vector<CVertex> &datapts, vector<CVertex> &querypts, int numKnn, bool need_self_included, QString purpose);
-	void computeBallNeighbors(CMesh* mesh0, CMesh* mesh1, double radius, vcg::Box3f& box);
+void static __cdecl self_neighbors(CGrid::iterator start, CGrid::iterator end, double radius);
+void static __cdecl other_neighbors(CGrid::iterator starta, CGrid::iterator enda,
+    CGrid::iterator startb, CGrid::iterator endb, double radius);
+void static __cdecl find_original_neighbors(CGrid::iterator starta, CGrid::iterator enda,
+    CGrid::iterator startb, CGrid::iterator endb, double radius);
 
-	void static  __cdecl self_neighbors(CGrid::iterator start, CGrid::iterator end, double radius);
-	void static  __cdecl other_neighbors(CGrid::iterator starta, CGrid::iterator enda, 
-		CGrid::iterator startb, CGrid::iterator endb, double radius);
-	void static __cdecl find_original_neighbors(CGrid::iterator starta, CGrid::iterator enda, 
-		CGrid::iterator startb, CGrid::iterator endb, double radius); 
+double computeEulerDist(Point3f& p1, Point3f& p2);
+double computeEulerDistSquare(Point3f& p1, Point3f& p2);
+double computeProjDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
+double computeProjDistSquare(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
+double computePerpendicularDistSquare(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
+double computePerpendicularDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
+double computeProjPlusPerpenDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
+double getDoubleMAXIMUM();
+vector<int> GetRandomCards(int Max);
 
-	double computeEulerDist(Point3f& p1, Point3f& p2);
-	double computeEulerDistSquare(Point3f& p1, Point3f& p2);
-	double computeProjDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
-	double computeProjDistSquare(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
-	double computePerpendicularDistSquare(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
-	double computePerpendicularDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
-	double computeProjPlusPerpenDist(Point3f& p1, Point3f& p2, Point3f& normal_of_p1);
-	double getDoubleMAXIMUM();
-	vector<int> GetRandomCards(int Max);
-
-	double computeRealAngleOfTwoVertor(Point3f v0, Point3f v1);
-	bool isTwoPoint3fTheSame(Point3f& v0, Point3f& v1);
-	bool isTwoPoint3fOpposite(Point3f& v0, Point3f& v1);
+double computeRealAngleOfTwoVertor(Point3f v0, Point3f v1);
+bool isTwoPoint3fTheSame(Point3f& v0, Point3f& v1);
+bool isTwoPoint3fOpposite(Point3f& v0, Point3f& v1);
 }
 
-class Timer
-{
+class Timer {
 public:
+    void start(const string& str)
+    {
+	cout << endl;
+	starttime = clock();
+	mid_start = clock();
+	cout << "@@@@@ Time Count Strat For: " << str << endl;
 
-	void start(const string& str)
-	{
-		cout << endl;
-		starttime = clock();
-		mid_start = clock();
-		cout << "@@@@@ Time Count Strat For: " << str << endl;
+	_str = str;
+    }
 
-		_str = str;
-	}
+    void insert(const string& str)
+    {
+	mid_end = clock();
+	timeused = mid_end - mid_start;
+	cout << "##" << str << "  time used:  " << timeused / double(CLOCKS_PER_SEC) << " seconds." << endl;
+	mid_start = clock();
+    }
 
-	void insert(const string& str)
-	{
-		mid_end = clock();
-		timeused = mid_end - mid_start;
-		cout << "##" << str << "  time used:  " << timeused / double(CLOCKS_PER_SEC) << " seconds." << endl;
-		mid_start = clock();
-	}
-
-	void end()
-	{
-		stoptime = clock();
-		timeused = stoptime - starttime;
-		cout << /*endl <<*/ "@@@@ finish	" << _str << "  time used:  " << timeused / double(CLOCKS_PER_SEC) << " seconds." << endl;
-		cout << endl;
-	}
+    void end()
+    {
+	stoptime = clock();
+	timeused = stoptime - starttime;
+	cout << /*endl <<*/ "@@@@ finish	" << _str << "  time used:  " << timeused / double(CLOCKS_PER_SEC) << " seconds." << endl;
+	cout << endl;
+    }
 
 private:
-	int starttime, mid_start, mid_end, stoptime, timeused;
-	string _str;
+    int starttime, mid_start, mid_end, stoptime, timeused;
+    string _str;
 };
-
-
-
 
 /* Useful code template
 
@@ -138,4 +134,3 @@ time.end();
 
 
 */
-
