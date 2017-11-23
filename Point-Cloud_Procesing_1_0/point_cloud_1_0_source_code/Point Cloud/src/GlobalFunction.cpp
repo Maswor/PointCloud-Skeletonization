@@ -319,7 +319,7 @@ vector<int> GlobalFun::GetRandomCards(int Max)
     vector<float> nCard(Max, 0);
     vector<int> nCard_final(Max, 0);
     double nCard_temp[Max];
-    gsl_qrng* q = gsl_qrng_alloc(gsl_qrng_sobol, 1);
+    static gsl_qrng* q = gsl_qrng_alloc(gsl_qrng_sobol, 1);
     for (auto i = 0; i < Max; i++) {
 	double v[1];
 	gsl_qrng_get(q, v);
