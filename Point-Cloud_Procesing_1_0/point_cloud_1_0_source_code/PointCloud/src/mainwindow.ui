@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainwindowClass</class>
+ <widget class="QMainWindow" name="mainwindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1275</width>
+    <height>573</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>55</width>
+    <height>55</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>5</width>
+    <height>5</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>1</width>
+    <height>1</height>
+   </size>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Point Cloud</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1275</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionImport_Ply"/>
+    <addaction name="actionSave_Ply"/>
+    <addaction name="actionSave_Skel"/>
+    <addaction name="actionNormalize"/>
+    <addaction name="actionDownSample"/>
+    <addaction name="actionSubSample"/>
+    <addaction name="actionQianSample"/>
+    <addaction name="actionClear_Data"/>
+    <addaction name="actionImport_Image"/>
+    <addaction name="actionSave_View"/>
+   </widget>
+   <widget class="QMenu" name="menuAlgorithom">
+    <property name="title">
+     <string>Algorithom</string>
+    </property>
+    <widget class="QMenu" name="menuWLOP">
+     <property name="title">
+      <string>WLOP</string>
+     </property>
+     <addaction name="actionRun_Wlop"/>
+     <addaction name="actionWLOP_Setting"/>
+    </widget>
+    <widget class="QMenu" name="menuNormal">
+     <property name="title">
+      <string>Normal</string>
+     </property>
+     <addaction name="actionRun_PCA"/>
+     <addaction name="actionNormal_Setting"/>
+     <addaction name="actionReorientate"/>
+    </widget>
+    <widget class="QMenu" name="menuSkeleton">
+     <property name="title">
+      <string>Skeleton</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionSkeleton_Setting"/>
+    </widget>
+    <widget class="QMenu" name="menuEAR">
+     <property name="title">
+      <string>EAR</string>
+     </property>
+     <addaction name="actionUpsample_Setting"/>
+    </widget>
+    <addaction name="menuWLOP"/>
+    <addaction name="menuNormal"/>
+    <addaction name="menuSkeleton"/>
+    <addaction name="menuEAR"/>
+   </widget>
+   <widget class="QMenu" name="menuRender">
+    <property name="title">
+     <string>Render</string>
+    </property>
+    <widget class="QMenu" name="menuColor">
+     <property name="title">
+      <string>Color</string>
+     </property>
+     <addaction name="actionLight_On_Off"/>
+     <addaction name="actionSample_Color"/>
+     <addaction name="actionOriginal_Color"/>
+     <addaction name="actionBackground_Color"/>
+     <addaction name="actionFeature_Color"/>
+     <addaction name="actionNormal_Color"/>
+     <addaction name="separator"/>
+     <addaction name="actionAmbient_Color"/>
+     <addaction name="actionDiffuse_Color"/>
+     <addaction name="actionSpecular_Color"/>
+     <addaction name="actionShow_Individual_Color"/>
+    </widget>
+    <widget class="QMenu" name="menuSample_Render">
+     <property name="title">
+      <string>Sample Render</string>
+     </property>
+     <addaction name="actionShow_Samples"/>
+     <addaction name="separator"/>
+     <addaction name="actionShow_Sample_Dot"/>
+     <addaction name="actionShow_Sample_Quads"/>
+     <addaction name="actionShow_Sample_Circle"/>
+     <addaction name="actionShow_Sample_Sphere"/>
+    </widget>
+    <widget class="QMenu" name="menuOriginal_Render">
+     <property name="title">
+      <string>Original Render</string>
+     </property>
+     <addaction name="actionShow_Original"/>
+     <addaction name="separator"/>
+     <addaction name="actionShow_Original_Dot"/>
+     <addaction name="actionShow_Original_Quad"/>
+     <addaction name="actionShow_Original_Circle"/>
+     <addaction name="actionShow_Original_Sphere"/>
+    </widget>
+    <widget class="QMenu" name="menuSnap_Shot">
+     <property name="title">
+      <string>Snap Shot</string>
+     </property>
+     <addaction name="actionSnapShot"/>
+     <addaction name="actionSnap_Each_Iteration"/>
+     <addaction name="actionNo_Snap_Radius"/>
+    </widget>
+    <widget class="QMenu" name="menuShow_Neighbor_Size">
+     <property name="title">
+      <string>Show Neighbor Size</string>
+     </property>
+     <addaction name="actionShow_Neighborhood_Ball"/>
+     <addaction name="actionShow_Radius_Line"/>
+     <addaction name="actionShow_All_Raidus"/>
+    </widget>
+    <widget class="QMenu" name="menuPick_Point">
+     <property name="title">
+      <string>Pick Point</string>
+     </property>
+     <addaction name="actionErase_Pick"/>
+    </widget>
+    <widget class="QMenu" name="menuSkeleton_Render">
+     <property name="title">
+      <string>Skeleton Render</string>
+     </property>
+     <addaction name="actionShow_Skeleton"/>
+     <addaction name="actionShow_colorful_branches"/>
+    </widget>
+    <addaction name="menuColor"/>
+    <addaction name="separator"/>
+    <addaction name="menuSample_Render"/>
+    <addaction name="menuOriginal_Render"/>
+    <addaction name="menuSkeleton_Render"/>
+    <addaction name="actionShow_Normals"/>
+    <addaction name="actionCull_Points"/>
+    <addaction name="actionRecompute_Quad"/>
+    <addaction name="actionShow_Normal_Color"/>
+    <addaction name="menuSnap_Shot"/>
+    <addaction name="menuShow_Neighbor_Size"/>
+    <addaction name="menuPick_Point"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAlgorithom"/>
+   <addaction name="menuRender"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="baseSize">
+    <size>
+     <width>11</width>
+     <height>11</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionImport_Ply"/>
+   <addaction name="actionSave_Ply"/>
+   <addaction name="actionSave_Skel"/>
+   <addaction name="actionSnapShot"/>
+   <addaction name="actionClear_Data"/>
+   <addaction name="separator"/>
+   <addaction name="actionDownSample"/>
+   <addaction name="actionSkeleton_Setting"/>
+   <addaction name="actionUpsample_Setting"/>
+   <addaction name="actionWLOP_Setting"/>
+   <addaction name="actionNormal_Setting"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="actionLight_On_Off"/>
+   <addaction name="actionShow_Normal_Color"/>
+   <addaction name="separator"/>
+   <addaction name="actionShow_Original"/>
+   <addaction name="actionShow_Samples"/>
+   <addaction name="actionShow_Skeleton"/>
+   <addaction name="separator"/>
+   <addaction name="actionShow_Neighborhood_Ball"/>
+   <addaction name="actionShow_Normals"/>
+   <addaction name="actionCull_Points"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionImport_Ply">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/open.png</normaloff>:/mainwindow/Icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import Ply</string>
+   </property>
+  </action>
+  <action name="actionSave_Ply">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/save.png</normaloff>:/mainwindow/Icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Ply</string>
+   </property>
+  </action>
+  <action name="actionShow_Samples">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Samples</string>
+   </property>
+  </action>
+  <action name="actionShow_Original">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Original</string>
+   </property>
+  </action>
+  <action name="actionShow_Neighborhood_Ball">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Raidus</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+  <action name="actionCull_Points">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cull Points</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionSample_Color">
+   <property name="text">
+    <string>Sample Color</string>
+   </property>
+  </action>
+  <action name="actionOriginal_Color">
+   <property name="text">
+    <string>Original Color</string>
+   </property>
+  </action>
+  <action name="actionBackground_Color">
+   <property name="text">
+    <string>Background Color</string>
+   </property>
+  </action>
+  <action name="actionAmbient_Color">
+   <property name="text">
+    <string>Ambient Color</string>
+   </property>
+  </action>
+  <action name="actionDiffuse_Color">
+   <property name="text">
+    <string>Diffuse Color</string>
+   </property>
+  </action>
+  <action name="actionSpecular_Color">
+   <property name="text">
+    <string>Specular Color</string>
+   </property>
+  </action>
+  <action name="actionLight_On_Off">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/lighton.png</normaloff>:/mainwindow/Icons/lighton.png</iconset>
+   </property>
+   <property name="text">
+    <string>Light On/Off</string>
+   </property>
+  </action>
+  <action name="actionInitial_Sampling">
+   <property name="text">
+    <string>Initial Sampling</string>
+   </property>
+  </action>
+  <action name="actionNormalize">
+   <property name="text">
+    <string>Normalize</string>
+   </property>
+  </action>
+  <action name="actionDownSample">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/reload.png</normaloff>:/mainwindow/Icons/reload.png</iconset>
+   </property>
+   <property name="text">
+    <string>Down Sample</string>
+   </property>
+  </action>
+  <action name="actionSubSample">
+   <property name="text">
+    <string>SubSample</string>
+   </property>
+  </action>
+  <action name="actionSnapShot">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/125.png</normaloff>:/mainwindow/Icons/125.png</iconset>
+   </property>
+   <property name="text">
+    <string>SnapShot</string>
+   </property>
+  </action>
+  <action name="actionShow_Normals">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Normals</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
+   </property>
+  </action>
+  <action name="actionFeature_Color">
+   <property name="text">
+    <string>Feature Color</string>
+   </property>
+  </action>
+  <action name="actionNormal_Color">
+   <property name="text">
+    <string>Normal Color</string>
+   </property>
+  </action>
+  <action name="actionWLOP_2">
+   <property name="text">
+    <string>Skeletonization</string>
+   </property>
+  </action>
+  <action name="actionRun_Wlop">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</normaloff>:/mainwindow/Icons/gowalla_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Run WLOP</string>
+   </property>
+  </action>
+  <action name="actionWLOP_Setting">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/gameboid_128x128-32.png</normaloff>:/mainwindow/Icons/gameboid_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>WLOP</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionRun_PCA">
+   <property name="text">
+    <string>Run PCA</string>
+   </property>
+  </action>
+  <action name="actionNormal_Setting">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/sleepbot_128x128-32.png</normaloff>:/mainwindow/Icons/sleepbot_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionReorientate">
+   <property name="text">
+    <string>Reorientate</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionShow_Sample_Quads">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Quad</string>
+   </property>
+  </action>
+  <action name="actionShow_Sample_Dot">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dot</string>
+   </property>
+  </action>
+  <action name="actionShow_Sample_Circle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionShow_Original_Quad">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Quad</string>
+   </property>
+  </action>
+  <action name="actionShow_Original_Dot">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dot</string>
+   </property>
+  </action>
+  <action name="actionShow_Original_Circle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionInitial_Sampling_2">
+   <property name="text">
+    <string>Initialization</string>
+   </property>
+  </action>
+  <action name="actionAuto_Play">
+   <property name="text">
+    <string>Auto Play</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="text">
+    <string>Step</string>
+   </property>
+  </action>
+  <action name="actionJump">
+   <property name="text">
+    <string>Jump</string>
+   </property>
+  </action>
+  <action name="actionSkeleton_Setting">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</normaloff>:/mainwindow/Icons/heyzap_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Skeleton</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionUpsample_Setting">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/upsample-xw.png</normaloff>:/mainwindow/Icons/upsample-xw.png</iconset>
+   </property>
+   <property name="text">
+    <string>EAR</string>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+     <strikeout>false</strikeout>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+  </action>
+  <action name="actionClear_Data">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/eraser.png</normaloff>:/mainwindow/Icons/eraser.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="actionImport_Image">
+   <property name="text">
+    <string>Import Image</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionShow_Individual_Color">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Individual Color</string>
+   </property>
+  </action>
+  <action name="actionRecompute_Quad">
+   <property name="text">
+    <string>Recompute Quad</string>
+   </property>
+  </action>
+  <action name="actionShow_Normal_Color">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/rgbt.png</normaloff>:/mainwindow/Icons/rgbt.png</iconset>
+   </property>
+   <property name="text">
+    <string>Normal Map Color</string>
+   </property>
+  </action>
+  <action name="actionSave_View">
+   <property name="text">
+    <string>Save View</string>
+   </property>
+  </action>
+  <action name="actionSnap_Each_Iteration">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Snap Each Iteration</string>
+   </property>
+  </action>
+  <action name="actionNo_Snap_Radius">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Not Snap Radius</string>
+   </property>
+  </action>
+  <action name="actionShow_Radius_Line">
+   <property name="text">
+    <string>Show Radius Line</string>
+   </property>
+  </action>
+  <action name="actionShow_All_Raidus">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show All Raidus</string>
+   </property>
+  </action>
+  <action name="actionSave_Skel">
+   <property name="icon">
+    <iconset resource="mainwindow.qrc">
+     <normaloff>:/mainwindow/Icons/folder_128x128-32.png</normaloff>:/mainwindow/Icons/folder_128x128-32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Skel</string>
+   </property>
+  </action>
+  <action name="actionErase_Pick">
+   <property name="text">
+    <string>Erase Pick</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+E</string>
+   </property>
+  </action>
+  <action name="actionShow_Sample_Sphere">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="actionShow_Original_Sphere">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="actionShow_Skeleton">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Skeleton</string>
+   </property>
+  </action>
+  <action name="actionShow_colorful_branches">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show colorful branches</string>
+   </property>
+  </action>
+  <action name="actionQianSample">
+   <property name="text">
+    <string>Fixed Sample(no random)</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
