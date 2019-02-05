@@ -1,25 +1,35 @@
-# AnnoLib
+# PointCloud Skeletonization (Work-in-progress)
 
-AnnoLib is a simple yet very powerful library for converting between Annotation Dataformats. To be able to read and write between **n** formats, programmers only need to implement **n** readers and **n** writers, instead of **n(n-1)** conversion classes.
+**PointCloud Skeletonization** is a **work-in-progress** pipeline to read Point Cloud from a lazer scanner, register multiple viewpoints and extact the **visual skeleton** of the scanned objects. We are particularly interested in Corn plants in field condition. At the moment, the algorithm work reasonably well with fully scanned plant; however, **missing parts (due to ooclusion) and non-linear skeleton body** is still to be addressed.
 
 ## Getting Started
 
-![alt text](./README_IMGS/screenshot.png "A reader implementation")
+Input PointCloud             |  Previous algorithm          |   Enhanced algorithm
+:-------------------------:|:-------------------------:|:-------------------------:
+![](./README_IMGS/Picture2.png)  |  ![](./README_IMGS/Picture0.png) | ![](./README_IMGS/Picture1.png)
 
-AnnoLib uses an intermediate representation of annotations, defined as **AnnoDatabase** datatype. Readers are required to parse the input into **AnnoDatabase** and Writers are required to accept **AnnoDatabase** and be able to write to its own format. This decouples Readers from Writers and help programmers to code independently from each others.
+Based largely on the paper [L1-medial skeleton of point cloud](http://202.182.120.255/file/upload_file/image/research/att201801101049/1515552573849.pdf) and their implementation, PointCloud Skeletonization make several changes to make the algorithm works better with plant:
+
+* **A new randomize algorithm**: One critical step of skeletonization is sub-sampling from Point Cloud. This step reduces computational cost and prevent overfitting. However, a normal randomize algorithm doesn't sample the space evenly, instead we use quasi-random generator to generate **low-discrepancy sequence** of points, which help with finer detail.
+* **Various tweak to reduce aggressive merging of branches**: Plants usually have much more branches compared to everyday ojects. Various steps of the algorithm try to smooth the skeleton points, which unintentionally merges real branches. We tweak its **hyper parameter** so the fitting process gives better result. This part is **empirical**
+* Move windows specific code to cross platform **Qt4** code and **Cmake** build system.
 
 ### Prerequisites
 
-Python3
+Install compiler and tooling for compiling software
 
 ```
-sudo apt install python3
+sudo apt update
+sudo apt install build-essentials
 ```
-Pip
+
+Install dependencies
 
 ```
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py --user
+sudo apt install cmake
+sudo apt install libqt4-dev 
+sudo apt install libglew-dev
+sudo apt install freeglut3-dev
 ```
 
 ### Installing
@@ -28,65 +38,41 @@ python get-pip.py --user
 Change the directory to root project folder
 
 ```
-cd /AnnoLib/annolib
+cd ./l1windows/Point-Cloud_Procesing_1_0/point_cloud_1_0_source_code/PointCloud
 ```
 
-Compile the source code
+Create a folder for out of source build
 
 ```
-python3 setup.py develop
+mkdir build
+cd build
+```
+
+To build on Unix OS (i.e Ubuntu, Mac OS)
+
+```
+cmake ..
+make -j8
+```
+
+To build on Microsoft Windows
+
+```
+cmake .. -G "Visual Studio 10"
+double click the generated project file -> click build
 ```
 
 ## Deployment
 
-From the perspective of a library user, you only need to initiate a reader, pass it to writer then call write() function
-
-```python
-parser = MySQLParser("utf-8",
-                        "~/Desktop/PointCloudISU/WebApp/www/html/sds_images",
-                        "~/Desktop/PointCloudISU/sdsgwas/src/traing_data")
-writer = CSVTrainTestWriter(parser, 0.8, False)
-writer.set_output_file("train.csv", "test.csv")
-writer.write()
-```
-
-From the perspective of a library writer, you only need to subclass **AnnoParser** or **AnnoWriter** for reader and writer respectively. Each of those classes is an **Abstract Base Class** so instead of fail silently, it will throw error if you implement your subclass wrong
-
-```python
-class AnnoParser(metaclass=ABCMeta):
-    """Abstract class for xml parser and matlab file parser"""
-
-    def __init__(self, encoding: str) -> None:
-        self.encode_method = encoding
-        self.shapes: AnnoDatabase = []
-        super().__init__()
-
-    @abstractmethod
-    def parse_anno(self) -> AnnoDatabase:
-        """
-        abstract method, will be implemented diffirently by children
-        parse annotation either form .xml file or matlab json file
-        """
-        pass
-
-    @property
-    def anno_data(self) -> AnnoDatabase:
-        """
-        smart getter, just call my_parser.Anno_Data, it will check
-        if ParseAnno has run yet and return annotation data.
-        self.shapes = [{'bbox' =[(x1, y1, x2, y2, 'label')], 'img_path' = ''}]
-
-        """
-        # Empty List valuates to fall
-        if self.shapes:
-            return self.shapes
-        self.shapes = self.parse_anno()
-        return self.shapes
-```
+Please follow the tutorial videos, which are available in Tutorial folder for step by step guide to use this software.
 
 ## Built With
 
-* [Setuptools](https://setuptools.readthedocs.io/en/latest/) - A packaging solution for Python project
+* [Cmake](https://cmake.org/) - CMake is an open-source, cross-platform family of tools designed to build, test and package software
+* [Qt Framework](https://www.qt.io/) - Qt is a free and open-source widget toolkit for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.
+* [OpenGL](https://www.opengl.org/) - Open Graphics Library (OpenGL) is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics.
+* [Glew](http://glew.sourceforge.net/) - The OpenGL Extension Wrangler Library (GLEW) is a cross-platform C/C++ library that helps in querying and loading OpenGL extensions.
+* [Glut](https://www.opengl.org/resources/libraries/glut/) - The OpenGL Utility Toolkit (GLUT) is a library of utilities for OpenGL programs, which primarily perform system-level I/O with the host operating system
 
 ## Contributing
 
